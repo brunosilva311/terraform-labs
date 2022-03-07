@@ -23,6 +23,14 @@ module "rg" {
 #location = "eastus"
 }
 
+module "vnet" {
+  source = "./modules/vnet"
+
+  for_each = var.vnets
+
+  vnet_name     = each.value["vnet_name"]
+  vnet_address_space = each.value["vnet_address_space"]
+}
 #module "rg-02" {
 #  source = "./modules/rg"
 #
