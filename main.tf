@@ -19,8 +19,8 @@ module "rg" {
   name     = each.value["name"]
   location = each.value["location"]
 
-#name     = "rg-tf-01"
-#location = "eastus"
+  #name     = "rg-tf-01"
+  #location = "eastus"
 }
 
 module "vnet" {
@@ -28,7 +28,7 @@ module "vnet" {
 
   for_each = var.vnets
 
-  vnet_name     = each.value["vnet_name"]
+  vnet_name          = each.value["vnet_name"]
   vnet_address_space = each.value["vnet_address_space"]
 }
 #module "rg-02" {
